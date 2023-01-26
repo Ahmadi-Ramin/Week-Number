@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Week Number is : <span id="week_number" style="color : #e91e63;">0</span></h1>
+    <script>
+        //init date
+        var date = new Date("2020-01-01");
+
+        document.getElementById("week_number").innerHTML = (getWeekOfMonth(date));
+        //get week number of date hgvh
+        function getWeekOfMonth(date) {
+            let adjustedDate = date.getDate() + date.getDay();
+            let prefixes = ['0', '1', '2', '3', '4', '5'];
+            return (parseInt(prefixes[0 | adjustedDate / 7]) + 1);
+        }
+    </script>
+</body>
+
+</html>
